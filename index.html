@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Hàm const trong cs6 -->
+    <script>
+    const color = {
+        red: 'Red',
+        yellow: 'Yellow',
+        green: 'Green'
+    }
+    color.red = 'Black';
+    console.log(color); // {red: "Black", yellow: "Yellow", green: "Green"}
+    </script>
+    <!-- Hàm let -->
+    <script>
+    function foo(condition) {
+        let name = 'Facebook';
+        if (condition > 10) {
+           let name = 'Zalo';
+           console.log(name); // Zalo
+        }
+        console.log(name); // Facebook
+     }
+     foo(8);
+     </script>
+     <!-- Hàm template string -->
+     <script>
+         let name = "Phi Long";
+        let greeting = `My name is ${name}`;
+
+        console.log(greeting); // I'm Phi Long
+     </script>
+     <!-- Hàm rest parameters, -->
+     <script>
+         function tinhTong(...args) {
+            let tong = 0;
+            for (let x of args) {
+                if (typeof x === 'number'){
+                    tong += x;
+                }
+            }
+            return tong;
+            }
+            console.log(tinhTong(3,4,5));
+     </script>
+     <!-- hàm Default Parameter  -->
+     <script>
+        function sayHello(domain = 'google.net')
+        {
+        return domain;
+        }
+
+        // Sử dụng
+        console.log("KHÔNG truyền tham số: " + sayHello()); //hàm có giá trị mặc định
+        console.log("CÓ truyền tham số: " + sayHello('facebook.com')); //hàm không có giá trị mặc định
+     </script>
+    <!-- hàm arrow function -->
+    <script>
+        var hello = (name, message) => {
+        console.log("Chào " + name + ",mình " + message);
+        };
+        hello('Long', 'rất vui được gặp bạn');
+    </script>
+    <!-- hàm promise  -->
+    <script>
+        var promise = new Promise(function(resolve, reject){
+        reject('Error!');
+        });
+       promise.then(function(message){
+        console.log(message);
+        })
+        .catch(function(message){
+        console.log(message);
+        });
+    </script>
+    <!-- Hàm look for...of -->
+    <script>
+        let scores = [10, 20, 30];
+        for (let score of scores) {
+        score = score + 5;
+        console.log(score);
+        }
+    </script>
+</body>
+</html>
